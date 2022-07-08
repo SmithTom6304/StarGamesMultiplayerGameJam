@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Brig",
-    "path": "folders/Sprites/PlayerSprites/Ships/Brig.yy",
+    "path": "folders/Sprites/Players/Ships/Brig.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_sail_brig_pirate",

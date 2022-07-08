@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Frigate",
-    "path": "folders/Sprites/PlayerSprites/Ships/Frigate.yy",
+    "path": "folders/Sprites/Players/Ships/Frigate.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_ship_frigate",
