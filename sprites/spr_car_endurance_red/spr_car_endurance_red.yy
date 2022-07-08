@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Cars",
-    "path": "folders/Sprites/PlayerSprites/Cars.yy",
+    "path": "folders/Sprites/Players/Cars.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_car_endurance_red",

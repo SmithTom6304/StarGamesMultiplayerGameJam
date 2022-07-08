@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 1,
-  "bbox_right": 796,
+  "bbox_right": 179,
   "bbox_top": 1,
-  "bbox_bottom": 386,
+  "bbox_bottom": 100,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 798,
-  "height": 388,
+  "width": 181,
+  "height": 102,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"a29e2af3-ff65-409a-86fc-e6292f34b8b0","path":"sprites/spr_ship_frigate/spr_ship_frigate.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a29e2af3-ff65-409a-86fc-e6292f34b8b0","path":"sprites/spr_ship_frigate/spr_ship_frigate.yy",},"LayerId":{"name":"fd577aa9-df0f-4722-ad47-c267e22f06b3","path":"sprites/spr_ship_frigate/spr_ship_frigate.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_ship_frigate","path":"sprites/spr_ship_frigate/spr_ship_frigate.yy",},"resourceVersion":"1.0","name":"a29e2af3-ff65-409a-86fc-e6292f34b8b0","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"72beff6f-4194-4663-b98a-5a09492fcde3","path":"sprites/spr_tyre_black_wall/spr_tyre_black_wall.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"72beff6f-4194-4663-b98a-5a09492fcde3","path":"sprites/spr_tyre_black_wall/spr_tyre_black_wall.yy",},"LayerId":{"name":"60edbd56-3840-4111-9d0f-7ae7ffd30ca5","path":"sprites/spr_tyre_black_wall/spr_tyre_black_wall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_tyre_black_wall","path":"sprites/spr_tyre_black_wall/spr_tyre_black_wall.yy",},"resourceVersion":"1.0","name":"72beff6f-4194-4663-b98a-5a09492fcde3","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_ship_frigate","path":"sprites/spr_ship_frigate/spr_ship_frigate.yy",},
+    "spriteId": {"name":"spr_tyre_black_wall","path":"sprites/spr_tyre_black_wall/spr_tyre_black_wall.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"22057fab-8e36-4374-b5b4-9e844da01e92","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a29e2af3-ff65-409a-86fc-e6292f34b8b0","path":"sprites/spr_ship_frigate/spr_ship_frigate.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
+            {"id":"86f084dc-4ca8-4c94-8544-42076c703659","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"72beff6f-4194-4663-b98a-5a09492fcde3","path":"sprites/spr_tyre_black_wall/spr_tyre_black_wall.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_ship_frigate","path":"sprites/spr_ship_frigate/spr_ship_frigate.yy",},
+    "parent": {"name":"spr_tyre_black_wall","path":"sprites/spr_tyre_black_wall/spr_tyre_black_wall.yy",},
     "resourceVersion": "1.4",
-    "name": "spr_ship_frigate",
+    "name": "spr_tyre_black_wall",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"fd577aa9-df0f-4722-ad47-c267e22f06b3","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"60edbd56-3840-4111-9d0f-7ae7ffd30ca5","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Frigate",
-    "path": "folders/Sprites/Players/Ships/Frigate.yy",
+    "name": "Barriers",
+    "path": "folders/Sprites/Track Decor/Barriers.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_ship_frigate",
+  "name": "spr_tyre_black_wall",
   "tags": [],
   "resourceType": "GMSprite",
 }
