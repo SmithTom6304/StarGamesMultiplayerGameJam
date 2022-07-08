@@ -86,7 +86,7 @@ function Vector2(_x=0, _y=0) constructor {
 	static add = function(_vect) {
 		var _x = x + _vect.x;
 		var _y = y + _vect.y;
-		return Vector2(_x, _y);
+		return new Vector2(_x, _y);
 	}
 	
 	/// @function subtract(vect)
@@ -96,7 +96,7 @@ function Vector2(_x=0, _y=0) constructor {
 	static subtract = function(_vect) {
 		var _x = x - _vect.x;
 		var _y = y - _vect.y;
-		return Vector2(_x, _y);
+		return new Vector2(_x, _y);
 	}
 
 	/// @function multiply(vect)
@@ -106,7 +106,7 @@ function Vector2(_x=0, _y=0) constructor {
 	static multiply = function(_vect) {
 		var _x = x * _vect.x;
 		var _y = y * _vect.y;
-		return Vector2(_x, _y);
+		return new Vector2(_x, _y);
 	}
 
 	/// @function multiplyBy(amount)
@@ -116,7 +116,7 @@ function Vector2(_x=0, _y=0) constructor {
 	static multiplyBy = function(_amount) {
 		var _x = x * _amount;
 		var _y = y * _amount;
-		return Vector2(_x, _y);
+		return new Vector2(_x, _y);
 	}
 
 	/// @function divide(vect)
@@ -126,7 +126,7 @@ function Vector2(_x=0, _y=0) constructor {
 	static divide = function(_vect) {
 		var _x = x / _vect.x;
 		var _y = y / _vect.y;
-		return Vector2(_x, _y);
+		return new Vector2(_x, _y);
 	}
 	
 	/// @function divideBy(amount)
@@ -136,20 +136,30 @@ function Vector2(_x=0, _y=0) constructor {
 	static divideBy = function(_value) {
 		var _x = x / _value;
 		var _y = y / _value;
-		return Vector2(_x, _y);
+		return new Vector2(_x, _y);
 	}
 	
 	/// @function negate()
 	/// @description Returns a new vector with a negated vector.
 	/// @returns {struct.Vector2}
 	static negate = function() {
-		return Vector2(-x, -y);
+		return new Vector2(-x, -y);
+	}
+	
+	/// @function rotate(amount)
+	/// @description Returns a new vector rotated by a given amount.
+	/// @params {real} amount The amount to rotate by (degrees).
+	/// @returns {struct.Vector2}
+	static rotate = function(_angle) {		
+		var _dir = point_direction(0, 0, x, y) + _angle;
+		var _length = point_distance(0, 0, x, y);
+		return Vector2Utils.fromPolar(_dir, _length);
 	}
 	
 	/// @function equals()
 	/// @description Checks vector equality.
 	/// @params {struct.Vector2} vect The vector to check equality.
-	/// @returns {boolean}
+	/// @returns {bool}
 	static equals = function(_vect) {
 		return x == _vect.x && y == _vect.y;
 	}

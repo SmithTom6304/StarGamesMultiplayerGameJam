@@ -4,8 +4,8 @@
 rollback_define_player(oPlayer);
 
 rollback_define_input({
-	up:[ord("W"), vk_up],
-	down:[ord("S"), vk_down],
+	forward:[ord("W"), vk_up],
+	reverse:[ord("S"), vk_space],
 	left:[ord("A"), vk_left],
 	right:[ord("D"), vk_right],
 });

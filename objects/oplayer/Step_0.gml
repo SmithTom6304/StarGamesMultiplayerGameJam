@@ -2,22 +2,29 @@
 // You can write your code in this editor
 
 var _input = rollback_get_input(player_id);
+var _driveInput = _input.forward - _input.reverse;
 
-steerDirection = _input.right - _input.left;
-velocity = Vector2();
+speed += _driveInput * acceleration;
 
-if (_input.up) {
-	velocity = Vector2Utils.fromPolar(10, direction);
+if (_driveInput != 0) {
+
 }
 
-var _position = new Vector2(x, y);
-var _offset = Vector2Utils.fromPolar(1, wheelDistance/2);
-var rearWheels = _position.subtract(_offset);
-var frontWheels = _position.add(_offset);
 
+if (_driveInput) {
+	speed = min(speed, velocityMax);
+}
+else {
+	
+	if (_breaking) speed = deceleration; // this allows 1 drift frame
+	else speed -= deceleration;
+	
+	speed = max(speed, 0);
+}
 
+if (speed > 0) {
+	var _steerInput = _input.right - _input.left;
+	direction -= (_breaking ? steerAngleDrift : steerAngle) * _steerInput;
 
-
-
-
-
+	image_angle = direction;
+}
