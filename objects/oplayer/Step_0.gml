@@ -1,30 +1,48 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+var _dt = delta_time*0.000001
 var _input = rollback_get_input(player_id);
-var _driveInput = _input.forward - _input.reverse;
 
-speed += _driveInput * acceleration;
+// Handle input
+var _steeringInput = _input.right - _input.left;
+steerAmount = steerAngle * _steeringInput;
+var _movingInput = _input.forward - _input.braking;
+acceleration = enginePower * _movingInput;
 
-if (_driveInput != 0) {
 
-}
+// Apply forces
+if (velocity < .01) velocity = 0;
 
+var _frictionForce = -terrainFriction * velocity;
+var _dragForce = -airFriction * velocity * velocity;
+acceleration += _frictionForce + _dragForce;
 
-if (_driveInput) {
-	speed = min(speed, velocityMax);
-}
-else {
-	
-	if (_breaking) speed = deceleration; // this allows 1 drift frame
-	else speed -= deceleration;
-	
-	speed = max(speed, 0);
-}
+velocity += acceleration * _dt;
 
-if (speed > 0) {
-	var _steerInput = _input.right - _input.left;
-	direction -= (_breaking ? steerAngleDrift : steerAngle) * _steerInput;
+// Handle the actual steering computation
+var _wheelBaseHalf = wheelBase * .5;
 
-	image_angle = direction;
-}
+var _dirCos = dcos(direction);
+var _dirSin = dsin(direction);
+
+var _xWheelOffset = _wheelBaseHalf * _dirCos;
+var _yWheelOffset = _wheelBaseHalf * _dirSin;
+
+var _frontWheelX = x + _xWheelOffset;
+var _frontWheelY = y + _yWheelOffset;
+
+var _backWheelX = x - _xWheelOffset;
+var _backWheelY = y - _yWheelOffset;
+
+_backWheelX += velocity * _dt * _dirCos;
+_backWheelY += velocity * _dt * _dirSin;
+
+_frontWheelX += velocity * _dt * dcos(direction + steerAmount);
+_frontWheelY += velocity * _dt * dsin(direction + steerAmount);
+
+x = (_frontWheelX + _backWheelX) / 2;
+y = (_frontWheelY + _backWheelY) / 2;
+
+direction = darctan2(_frontWheelY - _backWheelY, _frontWheelX - _backWheelX);
+image_angle = -direction;
