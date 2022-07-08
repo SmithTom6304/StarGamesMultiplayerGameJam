@@ -320,5 +320,5 @@ global.g_Vector2Utils = {
 	fromPolar : function(_length, _dir) {
 		return new Vector2(lengthdir_x(_length, _dir), lengthdir_y(_length, _dir));
 	}
-}
+} 
 

@@ -11,3 +11,5 @@ else if (player_id == 1) x = room_width - 100;
 wheelDistance = 40;
 steeringAngle = 15;
 
+velocity = new Vector2();
+steerDirection = 0;
