@@ -1,7 +1,7 @@
 {
   "conversionMode": 0,
-  "compression": 0,
-  "volume": 0.99,
+  "compression": 3,
+  "volume": 1.0,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "m_rm_stats.mp3",
-  "duration": 129.648,
+  "soundFile": "sndlobby.mp3",
+  "duration": 148.896,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "m_rm_stats",
+  "name": "sndLobby",
   "tags": [],
   "resourceType": "GMSound",
 }

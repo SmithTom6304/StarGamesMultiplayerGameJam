@@ -9,3 +9,5 @@ global.playerPoints = [0, 0, 0, 0];
 
 global.terrainLayer = layer_tilemap_get_id("TerrainStats");
 
+// Audio audio for level!!
+global.audioController.playAudio(sndLevel, 1000);

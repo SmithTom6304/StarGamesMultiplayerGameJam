@@ -15,5 +15,5 @@ rollback_define_input(global.gameControls);
 // In not joining a game
 if (!rollback_join_game()) {
 	// Create the game
-	rollback_create_game(2, true);
+	rollback_create_game(4, true);
 }

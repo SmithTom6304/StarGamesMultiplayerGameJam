@@ -1,6 +1,6 @@
 {
   "conversionMode": 0,
-  "compression": 0,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "m_rm_lobby.mp3",
-  "duration": 148.896,
+  "soundFile": "sndlevel.mp3",
+  "duration": 114.3995,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "m_rm_lobby",
+  "name": "sndLevel",
   "tags": [],
   "resourceType": "GMSound",
 }

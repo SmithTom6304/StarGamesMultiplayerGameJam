@@ -1,4 +1,9 @@
 
+global.audioController = undefined;
+
+global.playerToTean = [ 0, 0, 1, 1 ];
+global.teamToColor = [ c_red, c_blue ];
+
 global.gameControls = {
 	
 	// Driving Controls
@@ -10,6 +15,8 @@ global.gameControls = {
 }
 
 global.rollbackInitialized = false;
+
+global.playerPoints = [0, 0, 0, 0];
 
 global.playerLocations = 
 [
@@ -25,9 +32,9 @@ global.terrainStats =
 [
 	undefined,
 	// Sand
-	{ terrainFriction: 1.20, airFriction: 0.05, steerAngle: 15 },
+	{ frictionAmount: -.2, dragAmount: -0.05, steerAngle: 15 },
 	// Grass
-	{ terrainFriction: 1.0, airFriction: 0.008, steerAngle: 10 },
+	{ frictionAmount: -.12, dragAmount: -0.008, steerAngle: 10 },
 	// Track
-	{ terrainFriction: .98, airFriction: 0.001, steerAngle: 12 },
+	{ frictionAmount: -.08, dragAmount: -0.0015, steerAngle: 12 },
 ]
