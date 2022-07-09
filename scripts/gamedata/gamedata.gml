@@ -6,21 +6,17 @@ global.carSound = undefined;
 global.playerToTeam = [ 0, 0, 1, 1 ];
 global.teamToColor = [ c_red, c_blue ];
 
-global.playerToSprite = [ 
-	spr_car_endurance_red, 
-	spr_car_endurance_red, 
-	spr_car_endurance_blue,
-	spr_car_endurance_blue
+global.teamToSprite = [ 
+	sprPlayerRed, 
+	sprPlayerBlue,
 ];
 
 global.gameControls = {
-	
 	// Driving Controls
 	forward:	[ ord("W"),	vk_up ],
 	left:		[ ord("A"),	vk_left ],
 	right:		[ ord("D"),	vk_right ],
-	braking:	[ vk_space ],
-	
+	braking:	[ ord("S"), vk_down, vk_space ],
 }
 
 global.rollbackInitialized = false;

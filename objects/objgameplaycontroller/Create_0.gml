@@ -22,7 +22,7 @@ global.audioController.playAudio(sndLevel, 1000);
 state = GAMEPLAY_STATS.START;
 
 with (oPlayer) {
-	update = waitLogic;
+	update = waitUpdate;
 }
 
 startSound = undefined;
