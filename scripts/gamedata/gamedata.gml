@@ -1,4 +1,16 @@
 
+global.gameControls = {
+	
+	// Driving Controls
+	forward:	[ ord("W"),	vk_up ],
+	left:		[ ord("A"),	vk_left ],
+	right:		[ ord("D"),	vk_right ],
+	braking:	[ vk_space ],
+	
+}
+
+global.rollbackInitialized = false;
+
 global.playerLocations = 
 [
 	{ x: 2045, y: 1000 },

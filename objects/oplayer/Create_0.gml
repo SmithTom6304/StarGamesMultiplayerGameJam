@@ -31,6 +31,114 @@ velocity = 0;
 
 update = function() {};
 
+// ### INTERNAL VARIABLES ###
+accelerationX = 0;
+accelerationY = 0;
+directionX = 1;
+directionY = 0;
+velocityX = 0;
+velocityY = 0;
+
+
+#region METHODS
+
+function handleInput() {}
+
+function applyFriction() {}
+
+function applySteering(_input) {
+
+	var _wheelBaseHalf = wheelBase * .5;
+
+	var _wheelOffsetX = directionX * _wheelBaseHalf;
+	var _wheelOffsetY = directionY * _wheelBaseHalf;
+
+	var _frontWheelX = x + _wheelOffsetX;
+	var _frontWheelY = y + _wheelOffsetY;
+	
+	var _rearWheelX = x - _wheelOffsetX;
+	var _rearWheelY = y - _wheelOffsetY;
+
+	var _velocityAngle = point_direction(0, 0, velocityX, velocityY);
+	var _velocityLength = point_distance(0, 0, velocityX, velocityY);
+
+	// Rear Wheels
+	if (!_input.braking)
+	{
+		_rearWheelX += velocityX;
+		_rearWheelY += velocityY;
+	}
+	else
+	{
+		var _newAngle = _velocityAngle - steerDirection * steerAngle * .9;
+		var _rotatedVelX = lengthdir_x(_velocityLength, _newAngle);
+		var _rotatedVelY = lengthdir_y(_velocityLength, _newAngle);
+		
+		_rearWheelX += _rotatedVelX;
+		_rearWheelY += _rotatedVelY;
+	}
+	
+	// Front Wheels
+	var _newAngle = _velocityAngle - steerDirection * steerAngle;
+	var _rotatedVelX = lengthdir_x(_velocityLength, _newAngle);
+	var _rotatedVelY = lengthdir_y(_velocityLength, _newAngle);
+		
+	_frontWheelX += _rotatedVelX;
+	_frontWheelY += _rotatedVelY;
+	
+	var _newHeadingX = _frontWheelX - _rearWheelX
+	var _newHeadingY = _frontWheelY - _rearWheelY
+
+	// Normalize new heading
+	var _newHeadingAngle = point_direction(0, 0, _newHeadingX, _newHeadingY);
+	_newHeadingX = dcos(_newHeadingAngle);
+	_newHeadingY = dsin(_newHeadingAngle);
+	
+	var _isReverse =  dot_product(_newHeadingX, _newHeadingY, dcos(_velocityAngle), dsin(_velocityAngle))
+	if (_isReverse > 0)
+	{
+		velocityX = _newHeadingX * _velocityLength;
+		velocityY = _newHeadingY * _velocityLength;
+	}
+	if (_isReverse < 0)
+	{
+		velocityX = _newHeadingX * -min(_velocityLength, maxReverseSpeed);	
+		velocityY = _newHeadingY * -min(_velocityLength, maxReverseSpeed);	
+	}
+
+	image_angle = point_direction(0, 0, _newHeadingX, _newHeadingY);
+	direction = -image_angle;
+
+}
+
+function handleCollision() {
+
+	var hspd = _newX - x;
+	var _sign = sign(hspd);
+	if (place_meeting(x + hspd, y, obj_collision)) {
+		while (!place_meeting(x + _sign, y, obj_collision)) {
+			x += _sign;
+		}
+		hspd = 0;
+	}
+	else x = _newX;
+
+
+	var vspd = _newY - y;
+	_sign = sign(vspd);
+	if (place_meeting(x, y + _sign,  obj_collision)) {
+		while (!place_meeting(x, y + _sign, obj_collision)) {
+			y += _sign;
+		}
+		vspd = 0;
+	}
+	else y = _newY;
+
+}
+
+#endregion
+
+
 #region LOGIC
 
 
