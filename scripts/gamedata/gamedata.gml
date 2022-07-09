@@ -1,8 +1,17 @@
 
 global.audioController = undefined;
 
-global.playerToTean = [ 0, 0, 1, 1 ];
+global.carSound = undefined;
+
+global.playerToTeam = [ 0, 0, 1, 1 ];
 global.teamToColor = [ c_red, c_blue ];
+
+global.playerToSprite = [ 
+	spr_car_endurance_red, 
+	spr_car_endurance_red, 
+	spr_car_endurance_blue,
+	spr_car_endurance_blue
+];
 
 global.gameControls = {
 	

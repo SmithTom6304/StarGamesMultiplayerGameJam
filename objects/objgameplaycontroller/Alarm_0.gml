@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-isReady = false;
+state = GAMEPLAY_STATS.ENDING;
 
-global.audioController.playAudio(sndLobby, 1000);
+
+
+
+

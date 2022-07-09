@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var _instance = collision_circle(x, y, 20, oPlayer, false, true);
+var _instance = collision_circle(x, y, 35, oPlayer, false, true);
 if (_instance) {
 	
 	// Exit if this is recurrent
@@ -16,7 +16,7 @@ if (_instance) {
 	// If this was the first flag ever collected in this run earn 5 points
 	global.playerPoints[_id] += global.numberOfCaughtFlags == 0 ? 5 : 0;
 	
-	var _team = global.playerToTean[_id];
+	var _team = global.playerToTeam[_id];
 	var _color = global.teamToColor[_team];
 	
 	team = _team;
@@ -24,5 +24,7 @@ if (_instance) {
 	
 	// Increment the number of flags caught
 	global.numberOfCaughtFlags += 1;
+	
+	audio_play_sound(collecting_flag, 1, false);
 }
 

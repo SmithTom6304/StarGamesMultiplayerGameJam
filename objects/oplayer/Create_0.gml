@@ -8,6 +8,9 @@ var _location = global.playerLocations[player_id];
 x = _location.x;
 y = _location.y;
 
+var _sprite = global.playerToSprite[player_id];
+sprite_index = _sprite;
+
 
 // ### EDITABLE PROPERTIES ###
 wheelBase = 40;
@@ -28,9 +31,9 @@ directionY = 0;
 velocityX = 0;
 velocityY = 0;
 
-
-update = function() {};
-
+audioEmitter = audio_emitter_create();
+audio_emitter_gain(audioEmitter, 0.3);
+isIdled = false;
 
 #region METHODS
 
@@ -172,17 +175,35 @@ function handleCollision() {
 	}
 }
 
-function handleReset(_input) {
-	if (velocityX == 0 && velocityY == 0 && _input.forward) {
-		stuckCount += 1;
-	}
-	else stuckCount = 0;
+function handleStuck() {
 	
-	if (stuckCount == 4*60) {
-		var _location = global.playerLocations[player_id];
-		x = _location.x;
-		y = _location.y;
+	if (!place_meeting(x, y, obj_collision)) {
+		safeX = x;
+		safeY = y;
 	}
+	else {
+		x = safeX;
+		y = safeY;
+	}
+}
+
+function updateSounds(_input) {
+		
+	if (_input.forward) { 
+		if (isIdled == false) {
+			if (global.carSound) audio_stop_sound(global.carSound);
+			global.carSound = audio_play_sound_on(audioEmitter, SFX_endurance_car_loop_v1, true, 1);
+			isIdled = true;
+		}
+	}
+	else {
+		if (isIdled == true) {	
+			if (global.carSound) audio_stop_sound(global.carSound);
+			global.carSound = audio_play_sound_on(audioEmitter, SFX_endurance_car_idle_v1, true, 1);
+			isIdled = false;
+		}
+	}
+	
 }
 
 #endregion
@@ -190,6 +211,8 @@ function handleReset(_input) {
 
 #region LOGIC
 
+waitLogic = function() {
+}
 
 lobbyLogic = function() {
 }
@@ -220,20 +243,17 @@ gameplayUpdate = function() {
 	x += velocityX;
 	y += velocityY;
 	
-	handleReset(_input);
+	handleStuck();
+	
+	if (global.playerId == player_id) {
+		updateSounds(_input);
+	}
+
 }
 
 gameoverLogic = function() {
 }
 
+update = waitLogic;
 
 #endregion
-
-switch (room) {
-
-	case rm_level:
-		update = gameplayUpdate;
-		break;
-	default:
-		update = function() {};
-}

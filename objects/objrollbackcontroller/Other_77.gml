@@ -6,4 +6,6 @@ if (global.rollbackInitialized) return;
 if (rollback_event_param.first_start)
 	global.rollbackInitialized = true;
 
+global.playerId = rollback_event_param.player_id;
+
 instance_destroy();
