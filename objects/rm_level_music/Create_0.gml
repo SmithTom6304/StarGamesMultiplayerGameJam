@@ -1,4 +1,2 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-
+/// background music for rm_level
+audio_play_sound(m_rm_level,1000,true);
