@@ -18,7 +18,6 @@ switch (room) {
 	
 		timer = time_source_create(time_source_game, 4, time_source_units_seconds, function() {
 			room_goto(rm_level);
-			//time_source_destroy(timer);
 		});
 		time_source_start(timer);
 		break;
@@ -28,15 +27,13 @@ switch (room) {
 		global.terrainLayer = layer_tilemap_get_id("TerrainStats");
 		timer = time_source_create(time_source_game, 10, time_source_units_seconds, function() {
 			room_goto(rm_stats);
-			//time_source_destroy(timer);
 		});
-		time_source_start(timer);
+		//time_source_start(timer);
 		break;
 		
 	case rm_stats:
 		timer = time_source_create(time_source_game, 4, time_source_units_seconds, function() {
 			game_end();
-			//time_source_destroy(timer);
 		});
 		time_source_start(timer);
 }
