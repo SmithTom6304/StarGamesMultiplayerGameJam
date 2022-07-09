@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "m_rm_level.mp3",
-  "duration": 148.896,
+  "duration": 114.3995,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
