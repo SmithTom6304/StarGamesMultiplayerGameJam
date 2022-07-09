@@ -1,16 +1,18 @@
 {
-  "name": "obj_tree",
   "spriteId": {
     "name": "spr_tree_a",
     "path": "sprites/spr_tree_a/spr_tree_a.yy",
   },
-  "spriteMaskId": null,
-  "visible": true,
   "solid": false,
-  "persistent": false,
-  "physicsObject": false,
+  "visible": true,
   "managed": true,
-  "parentObjectId": null,
+  "spriteMaskId": null,
+  "persistent": false,
+  "parentObjectId": {
+    "name": "obj_collision",
+    "path": "objects/obj_collision/obj_collision.yy",
+  },
+  "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
   "physicsGroup": 1,
@@ -32,6 +34,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
+  "name": "obj_tree",
   "tags": [],
   "resourceType": "GMObject",
 }

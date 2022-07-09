@@ -1,17 +1,14 @@
 {
   "spriteId": {
-    "name": "spr_tyre_black_wall",
-    "path": "sprites/spr_tyre_black_wall/spr_tyre_black_wall.yy",
+    "name": "spr_collision",
+    "path": "sprites/spr_collision/spr_collision.yy",
   },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_collision",
-    "path": "objects/obj_collision/obj_collision.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -32,7 +29,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_tire_wall",
+  "name": "obj_collision",
   "tags": [],
   "resourceType": "GMObject",
 }

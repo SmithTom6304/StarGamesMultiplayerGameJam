@@ -1,13 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-y = room_height/2;
-
 image_xscale = .8
 image_yscale = .8
 
-if (player_id == 0) { x = 2045; y = 1000; }
-else if (player_id == 1) x = room_width - 200;
+var _location = global.playerLocations[player_id];
+x = _location.x;
+y = _location.y;
 
 // Tweakable variales
 wheelBase = 40;
@@ -16,7 +15,7 @@ enginePower = 800;
 brakingStrength = 450
 maxReverseSpeed = 20;
 
-terrainFriction = .98;
+terrainFriction = 0.9;
 airFriction = 0.001;
 
 // Internal flag collection variables
@@ -29,13 +28,27 @@ acceleration = 0;
 steerAmount = 0;
 velocity = 0;
 
+
+update = function() {};
+
+#region LOGIC
+
+
 lobbyLogic = function() {
 }
 
-gameplayLogic = function() {
+gameplayUpdate = function() {
 	
 	var _dt = delta_time*0.000001
 	var _input = rollback_get_input(player_id);
+
+	// Get terrain changes
+	_cellId = tilemap_get_at_pixel(global.terrainLayer, x, y);
+	var _data = global.terrainStats[_cellId];
+	
+	steerAngle = _data.steerAngle;
+	terrainFriction = _data.terrainFriction;
+	airFriction = _data.airFriction;
 
 	// Handle input
 	var _steeringInput = _input.right - _input.left;
@@ -80,8 +93,8 @@ gameplayLogic = function() {
 	// COLLISION HANDLING
 	var hspd = _newX - x;
 	var _sign = sign(hspd);
-	if (place_meeting(x + hspd, y, obj_tire_wall)) {
-		while (!place_meeting(x + _sign, y, obj_tire_wall)) {
+	if (place_meeting(x + hspd, y, obj_collision)) {
+		while (!place_meeting(x + _sign, y, obj_collision)) {
 			x += _sign;
 		}
 		hspd = 0;
@@ -91,8 +104,8 @@ gameplayLogic = function() {
 
 	var vspd = _newY - y;
 	_sign = sign(vspd);
-	if (place_meeting(x, y + _sign,  obj_tire_wall)) {
-		while (!place_meeting(x, y + _sign, obj_tire_wall)) {
+	if (place_meeting(x, y + _sign,  obj_collision)) {
+		while (!place_meeting(x, y + _sign, obj_collision)) {
 			y += _sign;
 		}
 		vspd = 0;
@@ -109,3 +122,13 @@ gameoverLogic = function() {
 }
 
 
+#endregion
+
+switch (room) {
+
+	case rm_level:
+		update = gameplayUpdate;
+		break;
+	default:
+		update = function() {};
+}
