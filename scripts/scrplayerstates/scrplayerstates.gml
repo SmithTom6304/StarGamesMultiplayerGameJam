@@ -1,7 +1,15 @@
 
+
 function waitUpdate() {}
 
-function lobbyUpdate() {}
+function lobbyUpdate() {
+
+	var _input = rollback_get_input(player_id);
+	if (_input.braking) {
+		global.playerReady[player_id] = true;
+		isReady = true;
+	}
+}
 
 function gameplayUpdate() {
 	
@@ -38,3 +46,4 @@ function gameplayUpdate() {
 }
 
 function statsUpdate() {}
+

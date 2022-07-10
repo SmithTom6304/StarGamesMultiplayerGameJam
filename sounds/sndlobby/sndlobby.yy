@@ -14,8 +14,8 @@
   "soundFile": "sndlobby.mp3",
   "duration": 148.896,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "BGM",
+    "path": "folders/Sounds/BGM.yy",
   },
   "resourceVersion": "1.0",
   "name": "sndLobby",

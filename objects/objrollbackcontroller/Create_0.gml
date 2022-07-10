@@ -11,7 +11,7 @@ if (global.rollbackInitialized) {
 // Audio audio for lobby!!
 global.audioController = instance_create_depth(0, 0, 0, objAudioController);
 
-rollback_define_player(oPlayer);
+rollback_define_player(objPlayer);
 
 rollback_define_input(global.gameControls);
 

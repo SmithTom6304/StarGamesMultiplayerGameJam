@@ -1,4 +1,8 @@
 
+global.playerId = undefined;
+
+global.playerInfo = [ undefined, undefined, undefined, undefined ]
+
 global.audioController = undefined;
 
 global.carSound = undefined;
@@ -21,6 +25,7 @@ global.gameControls = {
 
 global.rollbackInitialized = false;
 
+global.playerReady = [0, 0, 0, 0];
 global.playerPoints = [0, 0, 0, 0];
 
 global.playerLocations = 

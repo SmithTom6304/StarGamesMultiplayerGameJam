@@ -21,7 +21,7 @@ global.audioController.playAudio(sndLevel, 1000);
 
 state = GAMEPLAY_STATS.START;
 
-with (oPlayer) {
+with (objPlayer) {
 	update = waitUpdate;
 }
 

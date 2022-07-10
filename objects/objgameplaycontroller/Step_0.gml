@@ -13,7 +13,7 @@ switch (state) {
 		
 		if (!audio_is_playing(startSound)) {
 			
-			with(oPlayer) {
+			with(objPlayer) {
 				update = gameplayUpdate;
 			}
 			

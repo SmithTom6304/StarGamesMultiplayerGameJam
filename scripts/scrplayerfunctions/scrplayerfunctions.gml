@@ -1,5 +1,6 @@
 
 
+
 function applyTerrainStats() {
 	
 	// Get terrain changes
@@ -117,20 +118,20 @@ function applySteering(_input) {
 
 function handleCollision() {
 	
-	if (place_meeting(x + velocityX, y, obj_collision)) {
+	if (place_meeting(x + velocityX, y, objCollision)) {
 		while (abs(velocityX) > .1) {
 			velocityX *= .5;
-			if (!place_meeting(x + velocityX, y, obj_collision)) {
+			if (!place_meeting(x + velocityX, y, objCollision)) {
 				x += velocityX;
 			}
 		}
 		velocityX = 0;
 	}
 
-	if (place_meeting(x, y + velocityY, obj_collision)) {
+	if (place_meeting(x, y + velocityY, objCollision)) {
 		while (abs(velocityY) > .1) {
 			velocityY *= .5;
-			if (!place_meeting(x, y + velocityY, obj_collision)) {
+			if (!place_meeting(x, y + velocityY, objCollision)) {
 				y += velocityY;
 			}
 		}
@@ -140,7 +141,7 @@ function handleCollision() {
 
 function handleStuck() {
 	
-	if (!place_meeting(x, y, obj_collision)) {
+	if (!place_meeting(x, y, objCollision)) {
 		safeX = x;
 		safeY = y;
 	}
@@ -154,15 +155,15 @@ function updateSounds(_input) {
 		
 	if (_input.forward) { 
 		if (isIdled == false) {
-			if (global.carSound) audio_stop_sound(global.carSound);
-			global.carSound = audio_play_sound_on(audioEmitter, SFX_endurance_car_loop_v1, true, 1);
+			if (global.carSound != undefined) audio_stop_sound(global.carSound);
+			global.carSound = audio_play_sound_on(audioEmitter, sndCarMove, true, 1);
 			isIdled = true;
 		}
 	}
 	else {
 		if (isIdled == true) {	
-			if (global.carSound) audio_stop_sound(global.carSound);
-			global.carSound = audio_play_sound_on(audioEmitter, SFX_endurance_car_idle_v1, true, 1);
+			if (global.carSound != undefined) audio_stop_sound(global.carSound);
+			global.carSound = audio_play_sound_on(audioEmitter, sndCarIdle, true, 1);
 			isIdled = false;
 		}
 	}

@@ -14,8 +14,8 @@
   "soundFile": "sndlevel.mp3",
   "duration": 114.3995,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "BGM",
+    "path": "folders/Sounds/BGM.yy",
   },
   "resourceVersion": "1.0",
   "name": "sndLevel",

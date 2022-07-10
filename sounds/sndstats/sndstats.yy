@@ -14,8 +14,8 @@
   "soundFile": "sndstats.mp3",
   "duration": 129.648,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "BGM",
+    "path": "folders/Sounds/BGM.yy",
   },
   "resourceVersion": "1.0",
   "name": "sndStats",
