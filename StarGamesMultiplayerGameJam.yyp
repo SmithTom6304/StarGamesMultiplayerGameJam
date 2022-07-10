@@ -8,6 +8,7 @@
     {"id":{"name":"spr_TrackCornerTileset","path":"sprites/spr_TrackCornerTileset/spr_TrackCornerTileset.yy",},"order":6,},
     {"id":{"name":"spr_ts_stats","path":"sprites/spr_ts_stats/spr_ts_stats.yy",},"order":10,},
     {"id":{"name":"objRollbackController","path":"objects/objRollbackController/objRollbackController.yy",},"order":0,},
+    {"id":{"name":"spr_tree_a","path":"sprites/spr_tree_a/spr_tree_a.yy",},"order":0,},
     {"id":{"name":"objButton","path":"objects/objButton/objButton.yy",},"order":9,},
     {"id":{"name":"objGameplayController","path":"objects/objGameplayController/objGameplayController.yy",},"order":2,},
     {"id":{"name":"gameData","path":"scripts/gameData/gameData.yy",},"order":14,},
@@ -97,6 +98,7 @@
     {"folderPath":"folders/Sounds/SFX/Crowd.yy","order":6,"resourceVersion":"1.0","name":"Crowd","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sounds/SFX/Starting Beep.yy","order":8,"resourceVersion":"1.0","name":"Starting Beep","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sounds/BGM.yy","order":15,"resourceVersion":"1.0","name":"BGM","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Terrain/Trees.yy","order":11,"resourceVersion":"1.0","name":"Trees","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
