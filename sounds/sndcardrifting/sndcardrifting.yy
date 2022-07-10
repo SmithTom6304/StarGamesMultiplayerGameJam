@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sndcardrifting.wav",
-  "duration": 2.0,
+  "duration": 1.124989,
   "parent": {
     "name": "Car",
     "path": "folders/Sounds/SFX/Car.yy",

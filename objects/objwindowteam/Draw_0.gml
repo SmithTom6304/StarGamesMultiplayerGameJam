@@ -19,6 +19,7 @@ var _textHOffset = x + contentsHOffset + 110;
 draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
 draw_set_font(contentsFont);
+draw_set_color(contentsColor);
 
 for (var _it = 0; _it < 2; _it++) {
 	

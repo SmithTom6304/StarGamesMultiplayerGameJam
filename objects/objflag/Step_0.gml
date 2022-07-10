@@ -11,10 +11,13 @@ if (_instance) {
 	var _id = _instance.player_id;
 
 	// If this was a stolen flag earn 2 points else 1
-	global.playerPoints[_id] += team == undefined ? 1 : 2;
+	global.playerFlagsCollected[_id] += 1
 	
+	if (team != undefined) global.playerFlagsStolen[_id] += 1
+	
+
 	// If this was the first flag ever collected in this run earn 5 points
-	global.playerPoints[_id] += global.numberOfCaughtFlags == 0 ? 5 : 0;
+	if (global.numberOfCaughtFlags == 0) global.playerFirstFlag[_id] = 1;
 	
 	var _team = getPlayerTeam(_id);
 	var _color = getTeamColor(_team);
@@ -25,6 +28,6 @@ if (_instance) {
 	// Increment the number of flags caught
 	global.numberOfCaughtFlags += 1;
 	
-	audio_play_sound(sndFlagCollect, 1, false);
+	if (_id == global.playerId) audio_play_sound(sndFlagCollect, 1, false);
 }
 

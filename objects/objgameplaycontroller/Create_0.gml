@@ -8,11 +8,21 @@ enum GAMEPLAY_STATS {
 	END
 }
 
+guiCenter = display_get_gui_width() * .5;
+
 // Inherit the parent event
 event_inherited();
 
 global.numberOfCaughtFlags = 0;
+
 global.playerPoints = [0, 0, 0, 0];
+global.playerFlagsCollected = [0, 0, 0, 0];
+global.playerFlagsStolen = [0, 0, 0, 0];
+global.playerFirstFlag = [0, 0, 0, 0];
+global.playerDrifts = [0, 0, 0, 0];
+global.playerReverseBonus = [1, 1, 1, 1];
+global.playerCollideBonus = [1, 1, 1, 1];
+global.teamMoreFlags = [0, 0];
 
 global.terrainLayer = layer_tilemap_get_id("TerrainStats");
 

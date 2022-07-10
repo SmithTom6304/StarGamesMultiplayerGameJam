@@ -4,6 +4,8 @@
 // Audio audio for level!!
 global.audioController.playAudio(sndStats, 1000);
 
+global.playerReady = [0, 0, 0, 0];
+
 
 
 

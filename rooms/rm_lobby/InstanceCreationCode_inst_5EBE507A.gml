@@ -15,10 +15,10 @@ contentsVOffset = 35;
 
 contents = 
 
-"- Collect flags (+1 point each)\n" +
-"- Steal from your enemies (+2 points each)\n" +
-"- Catch the first flag of the round (+5 points)\n" +
-"- Finish with most flags (+5 points)\n" +
-"- No collisions (+3 points)\n" +
+"This is NOT your conventional racing game:\n" +
+"- Collect flags\n" +
+"- Steal from your enemies\n" +
+"- Finish with most flags\n" +
+"- Control using [WASD] or arrow keys + space\n" +
 "\n" +
-"- Control using [WASD] or arrow keys + space";
+"                     '...race for your lives!!'";

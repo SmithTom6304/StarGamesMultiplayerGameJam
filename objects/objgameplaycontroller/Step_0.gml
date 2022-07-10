@@ -16,16 +16,25 @@ switch (state) {
 			with(objPlayer) {
 				update = gameplayUpdate;
 			}
-			
-			alarm[0] = 60*90;
 			state = GAMEPLAY_STATS.RUNNING;
 		}
+		
+		// This is such an hack but it's on purpose
+		alarm[0] = 60*90;
 		break;
 
 	case GAMEPLAY_STATS.RUNNING:
 		break;
 		
 	case GAMEPLAY_STATS.ENDING:
+		with(objPlayer) {
+			ignoreInput = true;
+		}
+		calculatePoints();
+		
+		alarm[1] = 60*2;
+		audio_play_sound(sndApplause, 1, false);
+		state = GAMEPLAY_STATS.END;
 		break;
 }
 

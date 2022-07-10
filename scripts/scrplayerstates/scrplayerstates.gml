@@ -23,7 +23,7 @@ function gameplayUpdate() {
 	directionX = dcos(direction);
 	directionY = dsin(direction);
 
-	handleInput(_input);
+	if (!ignoreInput) handleInput(_input);
 
 	applyFriction();
 
@@ -45,5 +45,11 @@ function gameplayUpdate() {
 
 }
 
-function statsUpdate() {}
+function statsUpdate() {
+	var _input = rollback_get_input(player_id);
+	if (_input.braking) {
+		global.playerReady[player_id] = true;
+		isReady = true;
+	}
+}
 

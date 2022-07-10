@@ -1,7 +1,7 @@
 {
   "conversionMode": 0,
   "compression": 0,
-  "volume": 0.77,
+  "volume": 1.0,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "sndbuttonclick.wav",
-  "duration": 1.100313,
+  "soundFile": "sndapplause.wav",
+  "duration": 22.86093,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Crowd",
+    "path": "folders/Sounds/SFX/Crowd.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sndButtonclick",
+  "name": "sndApplause",
   "tags": [],
   "resourceType": "GMSound",
 }
